@@ -76,7 +76,7 @@ jobs:
         run: npm run test:integration
         env:
           DATABASE_URL: postgresql://acme:acme@localhost:55432/acme_test
-          INTEGRATION_WORKERS: auto
+          INTEGRATION_WORKERS: "4"
           APP_DB_POOL_SIZE: 4
 
       - name: Keep runner alive on failure
