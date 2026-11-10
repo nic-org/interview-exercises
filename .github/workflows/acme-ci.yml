@@ -79,6 +79,10 @@ jobs:
           INTEGRATION_WORKERS: auto
           APP_DB_POOL_SIZE: 4
 
+      - name: Keep runner alive on failure
+        if: failure()
+        run: sleep 1800
+
   docker-build:
     name: Docker build (${{ matrix.platform }})
     runs-on: ${{ matrix.runner }}
